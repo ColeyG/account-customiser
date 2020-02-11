@@ -134,3 +134,18 @@ p {
   border-radius: 50%;
 }
 
+.body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body .page {
+  width: 1200px;
+  height: 1000px;
+  background-color: #cccccc;
+  border-radius: 25px 25px 0 0;
+  box-shadow: inset 20px 20px 60px #adadad, inset -20px -20px 60px #ebebeb;
+}
+

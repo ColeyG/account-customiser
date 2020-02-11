@@ -2,12 +2,14 @@
   <div class="wrapper">
     <Header />
     <TopBar />
+    <Body />
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue";
 import TopBar from "./TopBar.vue";
+import Body from "./Body.vue";
 
 export default {
   name: "app",
@@ -19,7 +21,8 @@ export default {
   },
   components: {
     Header,
-    TopBar
+    TopBar,
+    Body
   }
 };
 </script>
