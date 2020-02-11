@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Calistoga);/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+body {
+  background-color: #a1869e;
+}
+
+h1,
+h2 {
+  color: white;
+  font-size: 42pt;
+  font-weight: normal;
+  font-family: "Calistoga", cursive;
+}
+
+p {
+  color: white;
+  font-size: 12pt;
+  font-weight: normal;
+  font-family: "Calistoga", cursive;
+}
+
+.primary-header {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #a1869e;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(145deg, #91798e, #ac8fa9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.primary-header p {
+  margin: 0 15px;
+  transform: translateY(12px);
+}
+
+.top-bar {
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+  background: #a1869e;
+  box-shadow: inset 20px 20px 60px #897286, inset -20px -20px 60px #b99ab6;
+}
+
+.top-bar .edit {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  background-color: #0b1d51;
+  text-decoration: none;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  margin: 50px 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #91798e, #ac8fa9);
+  box-shadow: 20px 20px 60px #897286, -20px -20px 60px #b99ab6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic .user-photo {
+  width: 75%;
+  border-radius: 50%;
+}
+
