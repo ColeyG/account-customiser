@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
+  /**
+   * Random Seed so we don't have to depend on sanitized data
+   *
+   * @param integer $length
+   * @return string
+   */
   private function randomSeed($length = 10) {
     $characters = '0123456789abcdefghklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -15,8 +21,14 @@ class ImageController extends Controller
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
-}
+  }
 
+  /**
+   * Create a new account picture
+   *
+   * @param Request $request
+   * @return string
+   */
   public function create(Request $request) {
     $destinationPath = 'uploads';
     $file = $request->image;
@@ -33,6 +45,11 @@ class ImageController extends Controller
     return $newName;
   }
 
+  /**
+   * Get an instance of stored images
+   *
+   * @return void
+   */
   public function get() {
     return \App\Image::all()->reverse()->values();
   }
