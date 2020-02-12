@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -19,9 +20,9 @@ class ImageController extends Controller
   public function create(Request $request) {
     $destinationPath = 'uploads';
     $file = $request->image;
-    $newName = $this->randomSeed().$file->getClientOriginalName();
+    $newName = $this->randomSeed();
 
-    $file->move($destinationPath,$newName);
+    Storage::putFileAs('public/', $request->image, $newName);
 
     $newImage = new \App\Image;
     $newImage->title = $file->getClientOriginalName();
@@ -33,6 +34,6 @@ class ImageController extends Controller
   }
 
   public function get() {
-    return \App\Image::all()->reverse()->values();;
+    return \App\Image::all()->reverse()->values();
   }
 }

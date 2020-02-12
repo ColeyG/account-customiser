@@ -3,7 +3,7 @@
     <CreateBar />
     <div class="page">
       <div class="page-image" v-for="(image, index) in images" v-bind:key="index">
-        <img v-bind:src="'uploads/' + image.image" />
+        <img v-bind:src="'storage/' + image.image" />
       </div>
     </div>
   </div>

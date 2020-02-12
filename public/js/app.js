@@ -776,7 +776,7 @@ var render = function() {
         { staticClass: "page" },
         _vm._l(_vm.images, function(image, index) {
           return _c("div", { key: index, staticClass: "page-image" }, [
-            _c("img", { attrs: { src: "uploads/" + image.image } })
+            _c("img", { attrs: { src: "storage/" + image.image } })
           ])
         }),
         0
