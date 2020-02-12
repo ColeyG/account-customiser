@@ -94,6 +94,13 @@ button {
   padding: 10px;
 }
 
+input {
+  color: white;
+  font-size: 12pt;
+  font-weight: normal;
+  font-family: "Calistoga", cursive;
+}
+
 .primary-header {
   padding: 15px;
   margin-bottom: 15px;

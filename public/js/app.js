@@ -170,7 +170,20 @@ __webpack_require__.r(__webpack_exports__);
   props: {},
   methods: {
     submit: function submit(e) {
-      console.log("submit");
+      var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+      var formData = new FormData(document.querySelector(".postForm"));
+      fetch("http://localhost:8000/imagesubmit", {
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRF-TOKEN": token
+        },
+        method: "post",
+        data: formData
+      }).then(function (resp) {
+        return resp.text();
+      }).then(function (myJson) {
+        console.log(myJson);
+      });
     }
   }
 });
@@ -757,22 +770,29 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "create-bar" }, [
-    _c("form", { attrs: { action: "", method: "post" } }, [
-      _c("h2", [_vm._v("New Post")]),
-      _vm._v(" "),
-      _c("input", {
-        attrs: {
-          type: "file",
-          id: "image",
-          name: "image",
-          accept: "image/png, image/jpeg, image/jpg"
-        }
-      }),
-      _vm._v(" "),
-      _c("button", { attrs: { type: "button" }, on: { click: _vm.submit } }, [
-        _vm._v("Create")
-      ])
-    ])
+    _c(
+      "form",
+      {
+        staticClass: "postForm",
+        attrs: { action: "", method: "post", enctype: "multipart/form-data" }
+      },
+      [
+        _c("h2", [_vm._v("New Post")]),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "file",
+            id: "image",
+            name: "image",
+            accept: "image/png, image/jpeg, image/jpg"
+          }
+        }),
+        _vm._v(" "),
+        _c("button", { attrs: { type: "button" }, on: { click: _vm.submit } }, [
+          _vm._v("Create")
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
