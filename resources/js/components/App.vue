@@ -14,11 +14,6 @@ import Body from "./Body.vue";
 export default {
   name: "app",
   props: {},
-  data() {
-    return {
-      showSidebar: true
-    };
-  },
   components: {
     Header,
     TopBar,

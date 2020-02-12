@@ -30,6 +30,15 @@ p {
   @include calistoga($color: $white, $size: 12pt);
 }
 
+button {
+  @include button-normalize();
+  @include calistoga($color: $white, $size: 12pt);
+  border-radius: 10px;
+  background-color: $blue;
+  text-decoration: none;
+  padding: 10px;
+}
+
 .primary-header {
   padding: 15px;
   margin-bottom: 15px;
@@ -89,6 +98,22 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  .create-bar {
+    width: 1200px;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    background: #a1869e;
+    box-shadow: 20px 20px 60px #897286, -20px -20px 60px #b99ab6;
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
   .page {
     width: 1200px;
     height: 1000px;

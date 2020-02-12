@@ -78,6 +78,22 @@ p {
   font-family: "Calistoga", cursive;
 }
 
+button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 12pt;
+  font-weight: normal;
+  font-family: "Calistoga", cursive;
+  border-radius: 10px;
+  background-color: #0b1d51;
+  text-decoration: none;
+  padding: 10px;
+}
+
 .primary-header {
   padding: 15px;
   margin-bottom: 15px;
@@ -139,6 +155,24 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.body .create-bar {
+  width: 1200px;
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 50px;
+  background: #a1869e;
+  box-shadow: 20px 20px 60px #897286, -20px -20px 60px #b99ab6;
+}
+
+.body .create-bar form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 .body .page {
