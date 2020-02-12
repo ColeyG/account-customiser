@@ -138,10 +138,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     CreateBar: _CreateBar__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      images: []
+    };
+  },
+  setImagesAction: function setImagesAction(newValue) {
+    console.log(newValue);
+    this.images = newValue;
+  },
+  created: function created() {
+    var self = this;
+    fetch("http://localhost:8000/imageget").then(function (resp) {
+      return resp.json();
+    }).then(function (resp) {
+      self.images = resp;
+    });
   }
 });
 
@@ -743,7 +764,20 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "body" },
-    [_c("CreateBar"), _vm._v(" "), _c("div", { staticClass: "page" })],
+    [
+      _c("CreateBar"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "page" },
+        _vm._l(_vm.images, function(image, index) {
+          return _c("div", { key: index, staticClass: "page-image" }, [
+            _c("img", { attrs: { src: "uploads/" + image.image } })
+          ])
+        }),
+        0
+      )
+    ],
     1
   )
 }

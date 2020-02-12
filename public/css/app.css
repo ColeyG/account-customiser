@@ -183,10 +183,30 @@ input {
 }
 
 .body .page {
+  padding: 10px;
   width: 1200px;
   height: 1000px;
   background-color: #cccccc;
   border-radius: 25px 25px 0 0;
   box-shadow: inset 20px 20px 60px #adadad, inset -20px -20px 60px #ebebeb;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.body .page .page-image {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+}
+
+.body .page .page-image img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 

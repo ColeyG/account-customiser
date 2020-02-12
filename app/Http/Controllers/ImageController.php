@@ -31,4 +31,8 @@ class ImageController extends Controller
 
     return $newName;
   }
+
+  public function get() {
+    return \App\Image::all();
+  }
 }
