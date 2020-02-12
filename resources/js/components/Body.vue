@@ -21,11 +21,17 @@ export default {
       images: []
     };
   },
-  setImagesAction(newValue) {
-    console.log(newValue);
-    this.images = newValue;
-  },
   created: function() {
+    var self = this;
+    fetch("http://localhost:8000/imageget")
+      .then(resp => {
+        return resp.json();
+      })
+      .then(resp => {
+        self.images = resp;
+      });
+  },
+  updated: function() {
     var self = this;
     fetch("http://localhost:8000/imageget")
       .then(resp => {

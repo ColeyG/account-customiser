@@ -152,11 +152,15 @@ __webpack_require__.r(__webpack_exports__);
       images: []
     };
   },
-  setImagesAction: function setImagesAction(newValue) {
-    console.log(newValue);
-    this.images = newValue;
-  },
   created: function created() {
+    var self = this;
+    fetch("http://localhost:8000/imageget").then(function (resp) {
+      return resp.json();
+    }).then(function (resp) {
+      self.images = resp;
+    });
+  },
+  updated: function updated() {
     var self = this;
     fetch("http://localhost:8000/imageget").then(function (resp) {
       return resp.json();

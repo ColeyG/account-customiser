@@ -33,6 +33,6 @@ class ImageController extends Controller
   }
 
   public function get() {
-    return \App\Image::all();
+    return \App\Image::all()->reverse()->values();;
   }
 }
