@@ -1,6 +1,6 @@
 <template>
   <header class="primary-header">
-    <h1>Spootster</h1>
+    <h1>Spoonster</h1>
     <p>Your Premium Book Dating Service</p>
   </header>
 </template>

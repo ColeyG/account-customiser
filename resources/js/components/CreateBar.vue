@@ -16,14 +16,15 @@ export default {
       let token = document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content");
-      let formData = new FormData(document.querySelector(".postForm"));
+      const data = new FormData(document.querySelector(".postForm"));
+
       fetch("http://localhost:8000/imagesubmit", {
         headers: {
           "X-Requested-With": "XMLHttpRequest",
           "X-CSRF-TOKEN": token
         },
         method: "post",
-        data: formData
+        body: data
       })
         .then(resp => {
           return resp.text();

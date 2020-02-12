@@ -171,14 +171,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     submit: function submit(e) {
       var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-      var formData = new FormData(document.querySelector(".postForm"));
+      var data = new FormData(document.querySelector(".postForm"));
       fetch("http://localhost:8000/imagesubmit", {
         headers: {
           "X-Requested-With": "XMLHttpRequest",
           "X-CSRF-TOKEN": token
         },
         method: "post",
-        data: formData
+        body: data
       }).then(function (resp) {
         return resp.text();
       }).then(function (myJson) {
@@ -825,7 +825,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "primary-header" }, [
-      _c("h1", [_vm._v("Spootster")]),
+      _c("h1", [_vm._v("Spoonster")]),
       _vm._v(" "),
       _c("p", [_vm._v("Your Premium Book Dating Service")])
     ])
