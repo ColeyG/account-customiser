@@ -154,6 +154,7 @@ input {
 
 .profile-pic .user-photo {
   width: 75%;
+  height: 75%;
   border-radius: 50%;
 }
 

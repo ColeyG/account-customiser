@@ -46,6 +46,29 @@ class ImageController extends Controller
   }
 
   /**
+   * Bind the account picture to the user
+   *
+   * @param Request $request
+   * @return void
+   */
+  public function userImage(Request $request) {
+    $newAcc = new \App\UserImage;
+    $newAcc->title = str_replace(",","/",$_GET['title']);
+
+    $newAcc->save();
+
+    return $request->name;
+  }
+
+  public function getUserImage() {
+    if (\App\UserImage::all()->reverse()->first()) {
+      return \App\UserImage::all()->reverse()->first();
+    } else {
+      return 'no image';
+    }
+  }
+
+  /**
    * Get an instance of stored images
    *
    * @return void
